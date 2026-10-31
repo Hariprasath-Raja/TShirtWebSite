@@ -1,0 +1,1393 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KRAFT & THREAD Co. | Luxury Heavyweight Streetwear & Custom Tees</title>
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Google Fonts: Syne (Luxury Editorial Headings) + Plus Jakarta Sans (Crisp Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        display: ['"Syne"', 'sans-serif'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                    },
+                    colors: {
+                        obsidian: '#090A0E',
+                        surface: '#111318',
+                        elevated: '#171A21',
+                        borderMuted: '#242833',
+                        volt: '#CCFF00', // D2C High-Conversion Electric Volt
+                        voltHover: '#b5e600',
+                        accentAmber: '#FF7A00',
+                        cream: '#F5F5F0',
+                    },
+                    animation: {
+                        'marquee': 'marquee 25s linear infinite',
+                    },
+                    keyframes: {
+                        marquee: {
+                            '0%': { transform: 'translateX(0%)' },
+                            '100%': { transform: 'translateX(-50%)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar { display: none; }
+        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .glass-panel {
+            background: rgba(17, 19, 24, 0.75);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .ambient-glow {
+            background: radial-gradient(circle at 50% 30%, rgba(204, 255, 0, 0.08) 0%, rgba(9, 10, 14, 0) 70%);
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-zinc-200 font-sans antialiased selection:bg-volt selection:text-black min-h-screen flex flex-col">
+
+    <!-- 1. VIP Announcement Bar with Live Currency / Free Delivery Progress -->
+    <div class="bg-surface text-zinc-400 text-[11px] font-mono py-2 px-4 border-b border-borderMuted select-none">
+        <div class="max-w-7xl mx-auto flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <span class="inline-flex items-center gap-1.5 text-volt font-bold uppercase tracking-wider text-[10px]">
+                    <span class="w-2 h-2 rounded-full bg-volt animate-ping"></span> DROP 08 LIVE
+                </span>
+                <span class="hidden md:inline text-zinc-600">|</span>
+                <span class="hidden md:inline text-zinc-300">FREE PAN-INDIA EXPRESS SHIPPING ON ORDERS OVER ₹999</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <span class="text-zinc-400 hidden sm:inline">Dispatch in 24h • Cash On Delivery Available</span>
+                <div class="flex items-center gap-1.5 text-zinc-300 font-mono text-[11px] bg-elevated px-2 py-0.5 rounded border border-borderMuted">
+                    <span>INR (₹)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Commercial Header / Navigation -->
+    <header class="sticky top-0 z-40 glass-panel border-b border-borderMuted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20 gap-4">
+                
+                <!-- Brand Logo (Pure Vector / Typography) -->
+                <a href="#" class="flex items-center gap-3 shrink-0 group">
+                    <div class="w-11 h-11 rounded-xl bg-white text-obsidian flex items-center justify-center font-display font-extrabold text-2xl tracking-tighter shadow-md group-hover:scale-105 transition-transform">
+                        K&T
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex items-center gap-1.5">
+                            <span class="text-xl font-extrabold tracking-tight text-white font-display uppercase whitespace-nowrap">
+                                KRAFT <span class="text-volt">&</span> THREAD
+                            </span>
+                            <span class="text-[9px] bg-elevated text-zinc-300 font-mono font-bold px-1.5 py-0.5 rounded border border-zinc-700">CO.</span>
+                        </div>
+                        <span class="text-[9px] text-zinc-400 font-mono uppercase tracking-[0.22em]">HEAVYWEIGHT APPAREL LAB</span>
+                    </div>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <nav class="hidden lg:flex items-center gap-8 text-[13px] font-bold tracking-widest uppercase font-mono text-zinc-300">
+                    <a href="#catalog" class="hover:text-volt transition-colors">Catalog</a>
+                    <a href="#custom-bulk" class="hover:text-volt transition-colors flex items-center gap-1">
+                        <span>Bulk / Merch</span>
+                        <span class="text-[9px] bg-volt/10 text-volt px-1.5 py-0.2 rounded border border-volt/30">CUSTOM</span>
+                    </a>
+                    <a href="#fabric-spec" class="hover:text-volt transition-colors">240 GSM Spec</a>
+                    <a href="#reviews" class="hover:text-volt transition-colors">Reviews (4.9★)</a>
+                    <a href="#store-locator" class="hover:text-volt transition-colors">Store</a>
+                </nav>
+
+                <!-- Actions: Cart Trigger, WhatsApp VIP, and Mobile Hamburger -->
+                <div class="flex items-center gap-3 shrink-0">
+                    
+                    <!-- WhatsApp Direct Concierge -->
+                    <a href="https://wa.me/916382808739?text=Hello%20KRAFT%20%26%20THREAD!%20I%20want%20to%20order%20a%20tee%20from%20your%20Drop%20Collection." 
+                       target="_blank"
+                       class="hidden sm:inline-flex items-center gap-2 bg-elevated hover:bg-zinc-800 text-zinc-200 border border-borderMuted px-4 py-2.5 rounded-xl font-mono text-xs font-bold transition hover:border-volt/40">
+                        <i data-lucide="message-square" class="w-4 h-4 text-emerald-400"></i>
+                        <span>WhatsApp VIP</span>
+                    </a>
+
+                    <!-- Shopping Bag Trigger with Dynamic Pill Counter -->
+                    <button onclick="toggleCartDrawer(true)" 
+                            class="relative bg-white text-obsidian hover:bg-volt transition-all px-4 py-2.5 rounded-xl font-mono text-xs font-extrabold flex items-center gap-2 active:scale-95 shadow-lg">
+                        <i data-lucide="shopping-bag" class="w-4 h-4"></i>
+                        <span class="hidden xs:inline">BAG</span>
+                        <span id="headerCartCount" class="bg-obsidian text-volt text-[10px] w-5 h-5 rounded-full flex items-center justify-center font-mono font-bold">0</span>
+                    </button>
+
+                    <!-- Mobile Drawer Toggle -->
+                    <button onclick="toggleMobileNav()" class="lg:hidden p-2.5 rounded-xl bg-elevated text-zinc-300 border border-borderMuted">
+                        <i data-lucide="menu" class="w-5 h-5"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer -->
+        <div id="mobileDrawer" class="hidden lg:hidden bg-surface border-t border-borderMuted px-6 py-5 space-y-4 font-mono text-xs uppercase font-bold tracking-wider">
+            <a href="#catalog" onclick="toggleMobileNav()" class="block py-2 text-zinc-300 hover:text-volt border-b border-borderMuted/40">Drop 08 Catalog</a>
+            <a href="#custom-bulk" onclick="toggleMobileNav()" class="block py-2 text-zinc-300 hover:text-volt border-b border-borderMuted/40">Custom College / Corporate Merch</a>
+            <a href="#fabric-spec" onclick="toggleMobileNav()" class="block py-2 text-zinc-300 hover:text-volt border-b border-borderMuted/40">240 GSM Fabric Spec</a>
+            <a href="#reviews" onclick="toggleMobileNav()" class="block py-2 text-zinc-300 hover:text-volt border-b border-borderMuted/40">Customer Reviews</a>
+            <a href="#store-locator" onclick="toggleMobileNav()" class="block py-2 text-zinc-300 hover:text-volt">Retail Store & Hours</a>
+        </div>
+    </header>
+
+    <!-- 3. Magazine Streetwear Hero Section -->
+    <section class="relative pt-8 pb-16 lg:py-20 border-b border-borderMuted overflow-hidden ambient-glow">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+                
+                <!-- Left Editorial Headline & Selling Points -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    
+                    <div class="inline-flex items-center gap-2 bg-elevated border border-borderMuted px-3.5 py-1.5 rounded-full text-xs font-mono">
+                        <span class="w-2 h-2 rounded-full bg-volt animate-pulse"></span>
+                        <span class="text-zinc-300 uppercase tracking-wider font-semibold">HEAVYWEIGHT 240 GSM FRENCH TERRY</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold font-display tracking-tight text-white leading-[1.05]">
+                        LUXURY DRAPE. <br>
+                        <span class="text-transparent bg-clip-text bg-gradient-to-r from-zinc-100 via-zinc-400 to-volt">STREETWEAR</span> FIT.
+                    </h1>
+
+                    <p class="text-base sm:text-lg text-zinc-400 max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        Precision-tailored drop-shoulder t-shirts built with dense, pre-shrunk combed cotton. Designed to hold shape, zero collar curl, guaranteed.
+                    </p>
+
+                    <!-- Hero Action CTAs -->
+                    <div class="pt-2 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
+                        <a href="#catalog" class="w-full sm:w-auto px-8 py-4 bg-volt hover:bg-voltHover text-obsidian rounded-xl font-mono font-black text-xs uppercase tracking-wider flex items-center justify-center gap-2 shadow-2xl transition hover:scale-[1.02] active:scale-95">
+                            <span>SHOP DROP 08 CATALOG</span>
+                            <i data-lucide="arrow-down-right" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#custom-bulk" class="w-full sm:w-auto px-7 py-4 bg-elevated hover:bg-zinc-800 text-zinc-200 border border-borderMuted rounded-xl font-mono font-bold text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition">
+                            <i data-lucide="printer" class="w-4 h-4 text-volt"></i>
+                            <span>CUSTOM BULK ORDERS</span>
+                        </a>
+                    </div>
+
+                    <!-- Trust Stats Bar -->
+                    <div class="pt-6 grid grid-cols-3 gap-3 border-t border-borderMuted max-w-lg mx-auto lg:mx-0 text-left">
+                        <div class="bg-surface/80 p-3.5 rounded-xl border border-borderMuted">
+                            <span class="text-[10px] font-mono text-zinc-500 uppercase block font-bold">COMMUNITY</span>
+                            <span class="text-lg font-black font-display text-white">18,500+</span>
+                            <span class="text-[10px] text-zinc-400 block font-mono">Tees Delivered</span>
+                        </div>
+                        <div class="bg-surface/80 p-3.5 rounded-xl border border-borderMuted">
+                            <span class="text-[10px] font-mono text-zinc-500 uppercase block font-bold">FABRIC GSM</span>
+                            <span class="text-lg font-black font-display text-volt">240 GSM</span>
+                            <span class="text-[10px] text-zinc-400 block font-mono">Zero Shrinkage</span>
+                        </div>
+                        <div class="bg-surface/80 p-3.5 rounded-xl border border-borderMuted">
+                            <span class="text-[10px] font-mono text-zinc-500 uppercase block font-bold">RATING</span>
+                            <span class="text-lg font-black font-display text-white">4.92 / 5.0</span>
+                            <span class="text-[10px] text-emerald-400 block font-mono">Verified Buyers</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Hero: Dual Visual Card & Live Interactive Badge -->
+                <div class="lg:col-span-5 relative">
+                    
+                    <!-- Scarcity Badge Tag -->
+                    <div class="absolute -top-3 -left-3 z-20 bg-volt text-obsidian font-mono text-[11px] font-black px-3.5 py-1.5 rounded-lg shadow-xl uppercase tracking-wider flex items-center gap-1.5">
+                        <i data-lucide="flame" class="w-3.5 h-3.5 fill-current"></i> SELLING FAST IN TAMIL NADU
+                    </div>
+
+                    <!-- Editorial Feature Card -->
+                    <div class="bg-surface p-3.5 rounded-3xl border border-borderMuted shadow-2xl relative">
+                        <div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-elevated">
+                            <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=900&q=80" 
+                                 alt="K&T Signature Heavyweight Oversized Tee" 
+                                 class="w-full h-full object-cover">
+                            
+                            <!-- Top Right Floating Pill -->
+                            <div class="absolute top-3.5 right-3.5 bg-obsidian/80 backdrop-blur-md px-3 py-1.5 rounded-full text-[10px] font-mono font-bold text-white border border-white/10 flex items-center gap-1.5">
+                                <span class="w-1.5 h-1.5 rounded-full bg-volt"></span> FRENCH TERRY COTTON
+                            </div>
+
+                            <!-- Bottom Card Detail Floating Dock -->
+                            <div class="absolute bottom-3 left-3 right-3 bg-obsidian/90 backdrop-blur-md p-4 rounded-xl border border-white/10 flex items-center justify-between">
+                                <div>
+                                    <span class="text-[10px] font-mono font-bold text-volt uppercase tracking-wider">FLAGSHIP ESSENTIAL</span>
+                                    <h4 class="font-display font-bold text-white text-base">Obsidian Drop-Shoulder Tee</h4>
+                                    <span class="text-xs text-zinc-400 font-mono">Sizes: S to XXL Available</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="text-xs text-zinc-500 line-through font-mono">₹999</span>
+                                    <span class="block text-2xl font-black font-display text-white">₹599</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottom Right Shield -->
+                    <div class="absolute -bottom-4 -right-2 bg-surface text-white font-mono text-[11px] font-bold px-4 py-2 rounded-xl border border-borderMuted shadow-2xl flex items-center gap-2">
+                        <i data-lucide="shield-check" class="w-4 h-4 text-volt"></i>
+                        <span>Color Fade Resistant 50+ Washes</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. Streetwear Marquee Banner -->
+    <div class="bg-surface py-3 overflow-hidden border-b border-borderMuted select-none">
+        <div class="flex whitespace-nowrap animate-marquee">
+            <span class="mx-6 text-xs font-mono font-bold tracking-widest text-zinc-400 flex items-center gap-4">
+                <span class="text-volt">✦</span> 100% COMBED HEAVYWEIGHT COTTON
+                <span class="text-volt">✦</span> BIO-ENZYME WASHED
+                <span class="text-volt">✦</span> 240 GSM HIGH-DENSITY WEAVE
+                <span class="text-volt">✦</span> INSTANT WHATSAPP CONFIRMATION
+                <span class="text-volt">✦</span> ZERO POST-WASH CRINKLE
+                <span class="text-volt">✦</span> STREETWEAR BOXY CUT
+            </span>
+            <span class="mx-6 text-xs font-mono font-bold tracking-widest text-zinc-400 flex items-center gap-4">
+                <span class="text-volt">✦</span> 100% COMBED HEAVYWEIGHT COTTON
+                <span class="text-volt">✦</span> BIO-ENZYME WASHED
+                <span class="text-volt">✦</span> 240 GSM HIGH-DENSITY WEAVE
+                <span class="text-volt">✦</span> INSTANT WHATSAPP CONFIRMATION
+                <span class="text-volt">✦</span> ZERO POST-WASH CRINKLE
+                <span class="text-volt">✦</span> STREETWEAR BOXY CUT
+            </span>
+        </div>
+    </div>
+
+    <!-- 5. Commercial Interactive Product Catalog -->
+    <section id="catalog" class="py-16 bg-obsidian">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Catalog Header & Category Pills -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-10 pb-6 border-b border-borderMuted">
+                <div>
+                    <span class="text-xs font-mono font-bold text-volt uppercase tracking-widest">// SEASON 2026 LINEUP</span>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold font-display text-white mt-1">Direct From The Factory</h2>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-1">Click a size, choose color swatches, or hover for model back-angle fit.</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+                    <button onclick="setFilter('all')" id="btn-filter-all" class="cat-pill px-4 py-2 rounded-xl text-xs font-mono font-bold transition whitespace-nowrap bg-volt text-obsidian shadow">
+                        All Designs (8)
+                    </button>
+                    <button onclick="setFilter('oversized')" id="btn-filter-oversized" class="cat-pill px-4 py-2 rounded-xl text-xs font-mono font-bold transition whitespace-nowrap bg-elevated text-zinc-300 hover:text-white border border-borderMuted">
+                        Oversized Drop-Shoulder
+                    </button>
+                    <button onclick="setFilter('solids')" id="btn-filter-solids" class="cat-pill px-4 py-2 rounded-xl text-xs font-mono font-bold transition whitespace-nowrap bg-elevated text-zinc-300 hover:text-white border border-borderMuted">
+                        Minimal Solids
+                    </button>
+                    <button onclick="setFilter('vintage')" id="btn-filter-vintage" class="cat-pill px-4 py-2 rounded-xl text-xs font-mono font-bold transition whitespace-nowrap bg-elevated text-zinc-300 hover:text-white border border-borderMuted">
+                        Acid / Mineral Wash
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Grid -->
+            <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Injected via JavaScript with dynamic interactions -->
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 6. Custom Bulk & College Cultural Printing Section -->
+    <section id="custom-bulk" class="py-16 bg-surface border-y border-borderMuted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="bg-gradient-to-r from-elevated via-surface to-elevated p-8 sm:p-12 rounded-3xl border border-borderMuted relative overflow-hidden">
+                
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <div class="lg:col-span-8 space-y-4">
+                        <div class="inline-flex items-center gap-2 bg-volt/10 text-volt border border-volt/20 text-xs font-mono font-bold px-3 py-1 rounded-full uppercase">
+                            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Custom Merch Studio
+                        </div>
+                        <h3 class="text-2xl sm:text-4xl font-extrabold font-display text-white">
+                            Need Custom Printed T-Shirts for College Fests or Your Startup?
+                        </h3>
+                        <p class="text-zinc-400 text-sm max-w-2xl leading-relaxed">
+                            We supply custom screen-printed, high-density puff print, and embroidery t-shirts on 220–260 GSM fabric. Fast turnaround with physical samples shipped within 48 hours.
+                        </p>
+                        <div class="flex flex-wrap gap-4 pt-2 font-mono text-xs text-zinc-300">
+                            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-volt"></i> Min. Order: 20 pcs</span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-volt"></i> From ₹240/pc</span>
+                            <span class="flex items-center gap-1.5"><i data-lucide="check" class="w-4 h-4 text-volt"></i> Free Design Mockup</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-4 flex flex-col gap-3">
+                        <a href="https://wa.me/916382808739?text=Hi%20KRAFT%20%26%20THREAD!%20I%20want%20a%20bulk%20quote%20for%20custom%20printed%20t-shirts." 
+                           target="_blank" 
+                           class="w-full bg-volt hover:bg-voltHover text-obsidian font-mono font-extrabold text-xs uppercase tracking-wider py-4 px-6 rounded-xl text-center flex items-center justify-center gap-2 shadow-xl transition active:scale-95">
+                            <i data-lucide="message-square" class="w-4 h-4"></i>
+                            <span>Get Instant Bulk Quote</span>
+                        </a>
+                        <span class="text-center text-[11px] font-mono text-zinc-500">Live replies on WhatsApp within 10 minutes</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Interactive Fabric & Fit Technology Specification -->
+    <section id="fabric-spec" class="py-16 bg-obsidian">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-xs font-mono font-bold text-volt uppercase tracking-widest">// THE TECHNICAL DIFFERENCE</span>
+                <h2 class="text-3xl font-extrabold font-display text-white mt-1">Why Local Customers Never Buy Fast-Fashion Again</h2>
+                <p class="text-xs sm:text-sm text-zinc-400 mt-2">Engineered from fiber level to eliminate sagging necklines and paper-thin cloth.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-surface p-7 rounded-2xl border border-borderMuted hover:border-zinc-700 transition">
+                    <div class="w-12 h-12 rounded-xl bg-elevated border border-borderMuted flex items-center justify-center text-volt mb-5">
+                        <i data-lucide="layers" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[11px] font-mono text-volt font-bold uppercase tracking-wider">FABRIC DENSITY</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">240 GSM Combed Cotton</h3>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-2.5 leading-relaxed">
+                        Twice the weight of typical mall-brand t-shirts (130-160 GSM). Creates a clean drape that conceals body contours with an authentic boxy profile.
+                    </p>
+                </div>
+
+                <div class="bg-surface p-7 rounded-2xl border border-borderMuted hover:border-zinc-700 transition">
+                    <div class="w-12 h-12 rounded-xl bg-elevated border border-borderMuted flex items-center justify-center text-volt mb-5">
+                        <i data-lucide="droplet" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[11px] font-mono text-volt font-bold uppercase tracking-wider">TREATMENT</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Bio-Washed & Silicon Softened</h3>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-2.5 leading-relaxed">
+                        Every meter goes through natural enzyme bio-polishing. Eliminates micro-fuzz, lint balls, and prevents post-wash shrinkage forever.
+                    </p>
+                </div>
+
+                <div class="bg-surface p-7 rounded-2xl border border-borderMuted hover:border-zinc-700 transition">
+                    <div class="w-12 h-12 rounded-xl bg-elevated border border-borderMuted flex items-center justify-center text-volt mb-5">
+                        <i data-lucide="anchor" class="w-6 h-6"></i>
+                    </div>
+                    <span class="text-[11px] font-mono text-volt font-bold uppercase tracking-wider">CONSTRUCTION</span>
+                    <h3 class="text-xl font-bold font-display text-white mt-1">Reinforced 1x1 Lycra Rib Collar</h3>
+                    <p class="text-xs sm:text-sm text-zinc-400 mt-2.5 leading-relaxed">
+                        Woven with double-needle ribbed collar and shoulder-to-shoulder chain stitching so the neckline stays snug and firm even after 60 machine washes.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Live Customer Reviews & Real Verification -->
+    <section id="reviews" class="py-16 bg-surface border-t border-borderMuted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-10">
+                <div>
+                    <span class="text-xs font-mono font-bold text-volt uppercase tracking-widest">// BUYER SOCIAL PROOF</span>
+                    <h2 class="text-3xl font-extrabold font-display text-white mt-1">Real Feedback from WhatsApp Orders</h2>
+                </div>
+                <div class="flex items-center gap-2 text-xs font-mono bg-elevated px-4 py-2 rounded-xl border border-borderMuted">
+                    <span class="text-amber-400 flex"><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i><i data-lucide="star" class="w-4 h-4 fill-amber-400"></i></span>
+                    <span class="text-white font-bold ml-1">4.92 / 5.0</span>
+                    <span class="text-zinc-500">(1,240+ Reviews)</span>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-elevated p-6 rounded-2xl border border-borderMuted flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex text-amber-400 gap-0.5">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500">Yesterday</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                            "The drop shoulder and fabric weight are better than tees I bought for ₹1,800 on Zara. WhatsApp delivery tracking was super quick and came in a matte ziplock bag."
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-borderMuted flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-white">Vigneshwaran R.</p>
+                            <p class="text-[10px] text-zinc-400 font-mono">Bought Tokyo Cyber Acid (XL)</p>
+                        </div>
+                        <span class="text-[10px] font-mono text-volt bg-volt/10 border border-volt/20 px-2 py-0.5 rounded">VERIFIED</span>
+                    </div>
+                </div>
+
+                <div class="bg-elevated p-6 rounded-2xl border border-borderMuted flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex text-amber-400 gap-0.5">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500">3 days ago</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                            "Wash tested twice in a top load machine with warm water. Collar didn't lose elasticity at all. Really solid brand, placing an order for 2 more colors."
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-borderMuted flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-white">Aditya Menon</p>
+                            <p class="text-[10px] text-zinc-400 font-mono">Bought Obsidian Minimal (L)</p>
+                        </div>
+                        <span class="text-[10px] font-mono text-volt bg-volt/10 border border-volt/20 px-2 py-0.5 rounded">VERIFIED</span>
+                    </div>
+                </div>
+
+                <div class="bg-elevated p-6 rounded-2xl border border-borderMuted flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <div class="flex text-amber-400 gap-0.5">
+                                <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i><i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400"></i>
+                            </div>
+                            <span class="text-[10px] font-mono text-zinc-500">1 week ago</span>
+                        </div>
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">
+                            "Ordered 45 t-shirts for our college symposium. Screen print clarity on the back artwork was crisp and delivered before the deadline. 10/10 service."
+                        </p>
+                    </div>
+                    <div class="mt-5 pt-4 border-t border-borderMuted flex items-center justify-between">
+                        <div>
+                            <p class="text-xs font-bold text-white">Naveen Kumar</p>
+                            <p class="text-[10px] text-zinc-400 font-mono">Bulk Order Coordinator</p>
+                        </div>
+                        <span class="text-[10px] font-mono text-volt bg-volt/10 border border-volt/20 px-2 py-0.5 rounded">VERIFIED</span>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 9. Store Locator & Hours -->
+    <section id="store-locator" class="py-16 bg-obsidian">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                
+                <div class="bg-surface border border-borderMuted p-6 rounded-2xl">
+                    <div class="w-10 h-10 rounded-xl bg-elevated border border-borderMuted flex items-center justify-center text-volt mb-4">
+                        <i data-lucide="map-pin" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-display font-bold text-white text-lg">Physical Store Experience</h4>
+                    <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                        <strong>KRAFT & THREAD Co. Flagship</strong><br>
+                        Shop #14, Ground Floor, Avenue Galleria,<br>
+                        Opposite Fun Republic Mall, Avinashi Road,<br>
+                        Tamil Nadu - 641004
+                    </p>
+                    <a href="https://maps.google.com" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-mono font-bold text-volt mt-4 hover:underline">
+                        <span>Get Driving Directions</span>
+                        <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                    </a>
+                </div>
+
+                <div class="bg-surface border border-borderMuted p-6 rounded-2xl">
+                    <div class="w-10 h-10 rounded-xl bg-elevated border border-borderMuted flex items-center justify-center text-volt mb-4">
+                        <i data-lucide="clock" class="w-5 h-5"></i>
+                    </div>
+                    <h4 class="font-display font-bold text-white text-lg">Store Fitting Hours</h4>
+                    <ul class="text-xs text-zinc-400 mt-2 space-y-2.5 font-mono">
+                        <li class="flex justify-between border-b border-borderMuted/40 pb-1.5">
+                            <span>Monday - Saturday:</span>
+                            <span class="text-white font-bold">10:30 AM – 09:30 PM</span>
+                        </li>
+                        <li class="flex justify-between border-b border-borderMuted/40 pb-1.5">
+                            <span>Sunday:</span>
+                            <span class="text-white font-bold">11:00 AM – 09:00 PM</span>
+                        </li>
+                    </ul>
+                    <div class="mt-4 flex items-center gap-2 text-[11px] font-mono text-emerald-400">
+                        <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                        <span>Trial room available for size checks today</span>
+                    </div>
+                </div>
+
+                <div class="bg-surface border border-borderMuted p-6 rounded-2xl flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-xl bg-elevated border border-borderMuted flex items-center justify-center text-volt mb-4">
+                            <i data-lucide="phone-call" class="w-5 h-5"></i>
+                        </div>
+                        <h4 class="font-display font-bold text-white text-lg">Direct WhatsApp Hotline</h4>
+                        <p class="text-xs text-zinc-400 mt-2 leading-relaxed">
+                            Need help picking between size L and XL? Send us your height/weight and our in-store stylist will confirm your fit.
+                        </p>
+                        <p class="font-mono font-bold text-sm text-white mt-2">+91 63828 08739</p>
+                    </div>
+                    <div class="mt-4 pt-3 flex gap-2">
+                        <a href="tel:+916382808739" class="flex-1 py-2.5 bg-elevated hover:bg-zinc-800 text-white text-center rounded-xl text-xs font-mono font-bold border border-borderMuted transition">
+                            Direct Call
+                        </a>
+                        <a href="https://wa.me/916382808739" target="_blank" class="flex-1 py-2.5 bg-volt hover:bg-voltHover text-obsidian text-center rounded-xl text-xs font-mono font-extrabold transition">
+                            Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Commercial Footer -->
+    <footer class="bg-surface text-zinc-400 text-xs font-mono py-12 border-t border-borderMuted mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-borderMuted">
+                
+                <div class="space-y-3">
+                    <span class="text-base font-extrabold font-display text-white">KRAFT & THREAD Co.</span>
+                    <p class="text-xs text-zinc-400 leading-relaxed font-sans">
+                        Independent Indian direct-to-consumer streetwear brand crafted with heavyweight cotton and custom tailoring.
+                    </p>
+                    <div class="text-[10px] text-zinc-500">
+                        GST: 33AAFCK1234F1Z8 • Certified Tirupur Combed Mills
+                    </div>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase tracking-wider mb-3">Quick Navigation</h5>
+                    <ul class="space-y-2">
+                        <li><a href="#catalog" class="hover:text-volt transition">All Drops</a></li>
+                        <li><a href="#custom-bulk" class="hover:text-volt transition">Bulk Custom Printing</a></li>
+                        <li><a href="#fabric-spec" class="hover:text-volt transition">Fabric & Fit Guide</a></li>
+                        <li><a href="#reviews" class="hover:text-volt transition">Customer Feedback</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase tracking-wider mb-3">Ordering & Support</h5>
+                    <ul class="space-y-2">
+                        <li><span>Standard Delivery: 2-4 Business Days</span></li>
+                        <li><span>Exchange Window: 7 Days Seamless</span></li>
+                        <li><span>Direct UPI / COD confirmed on Chat</span></li>
+                        <li><span>Support: care@kraftandthread.com</span></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h5 class="text-white font-bold uppercase tracking-wider mb-3">WhatsApp Order Perks</h5>
+                    <div class="flex flex-wrap gap-2 text-zinc-300">
+                        <span class="bg-elevated px-2.5 py-1 rounded border border-borderMuted text-[10px] text-emerald-400 font-bold flex items-center gap-1">
+                            <i data-lucide="message-square" class="w-3 h-3"></i> 1-Tap Ordering
+                        </span>
+                        <span class="bg-elevated px-2.5 py-1 rounded border border-borderMuted text-[10px]">Instant Bill on Chat</span>
+                        <span class="bg-elevated px-2.5 py-1 rounded border border-borderMuted text-[10px]">GPay / PhonePe UPI</span>
+                        <span class="bg-elevated px-2.5 py-1 rounded border border-borderMuted text-[10px]">Cash On Delivery</span>
+                        <span class="bg-elevated px-2.5 py-1 rounded border border-borderMuted text-[10px]">Live Size Consultation</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-500 text-[11px]">
+                <p>© 2026 KRAFT & THREAD Co. All rights reserved.</p>
+                <p class="text-zinc-400">Production-Ready D2C Apparel Architecture</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- SLIDE-OVER FLYOUT SHOPPING BAG (Production Grade) -->
+    <div id="cartDrawer" class="fixed inset-0 z-50 pointer-events-none transition-all duration-300">
+        <!-- Backdrop -->
+        <div id="cartBackdrop" onclick="toggleCartDrawer(false)" class="absolute inset-0 bg-black/70 backdrop-blur-sm opacity-0 transition-opacity duration-300 pointer-events-none"></div>
+
+        <!-- Right Drawer Panel -->
+        <div id="cartPanel" class="absolute top-0 right-0 bottom-0 w-full max-w-md bg-surface border-l border-borderMuted p-6 flex flex-col justify-between translate-x-full transition-transform duration-300 pointer-events-auto shadow-2xl">
+            
+            <!-- Drawer Header -->
+            <div>
+                <div class="flex items-center justify-between pb-4 border-b border-borderMuted">
+                    <div class="flex items-center gap-2">
+                        <i data-lucide="shopping-bag" class="w-5 h-5 text-volt"></i>
+                        <h3 class="text-lg font-bold font-display text-white">YOUR SHOPPING BAG</h3>
+                        <span id="drawerBagCount" class="bg-elevated text-volt font-mono text-xs px-2 py-0.5 rounded border border-borderMuted">0</span>
+                    </div>
+                    <button onclick="toggleCartDrawer(false)" class="p-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-elevated transition">
+                        <i data-lucide="x" class="w-5 h-5"></i>
+                    </button>
+                </div>
+
+                <!-- Free Shipping Progress Indicator -->
+                <div class="mt-4 bg-elevated p-3 rounded-xl border border-borderMuted text-xs font-mono">
+                    <div class="flex justify-between text-zinc-300 mb-1.5">
+                        <span id="shippingGoalText">Add ₹999 for Free Express Delivery</span>
+                        <span id="shippingPercentText" class="text-volt font-bold">0%</span>
+                    </div>
+                    <div class="w-full bg-borderMuted h-1.5 rounded-full overflow-hidden">
+                        <div id="shippingProgressBar" class="bg-volt h-full w-0 transition-all duration-500"></div>
+                    </div>
+                </div>
+
+                <!-- Cart Items List Container -->
+                <div id="cartItemsContainer" class="mt-5 space-y-3 max-h-[46vh] overflow-y-auto pr-1 no-scrollbar">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+
+            <!-- Drawer Footer Summary & Checkout Options -->
+            <div class="pt-4 border-t border-borderMuted space-y-3 font-mono">
+                
+                <!-- Delivery Address Form (Captured directly before WhatsApp checkout) -->
+                <div id="deliveryAddressSection" class="bg-elevated/90 border border-borderMuted rounded-xl p-3.5 space-y-2.5">
+                    <div class="flex items-center justify-between text-[11px] font-bold text-zinc-300 pb-1.5 border-b border-borderMuted/60">
+                        <span class="flex items-center gap-1.5 text-volt">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+                            <span>DELIVERY DETAILS</span>
+                        </span>
+                        <span class="text-[10px] text-zinc-500 font-normal">Auto-saved</span>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 text-xs">
+                        <div>
+                            <input type="text" id="custName" placeholder="Full Name *" 
+                                   class="w-full bg-surface border border-borderMuted text-white placeholder-zinc-500 text-[11px] px-2.5 py-2 rounded-lg focus:outline-none focus:border-volt transition"
+                                   oninput="saveCustomerData()">
+                        </div>
+                        <div>
+                            <input type="tel" id="custPhone" placeholder="10-digit Mobile *" maxlength="10"
+                                   class="w-full bg-surface border border-borderMuted text-white placeholder-zinc-500 text-[11px] px-2.5 py-2 rounded-lg focus:outline-none focus:border-volt transition"
+                                   oninput="saveCustomerData()">
+                        </div>
+                    </div>
+
+                    <div>
+                        <textarea id="custAddress" rows="2" placeholder="Delivery Address (House no, Street, Area, City) *"
+                                  class="w-full bg-surface border border-borderMuted text-white placeholder-zinc-500 text-[11px] px-2.5 py-2 rounded-lg focus:outline-none focus:border-volt transition resize-none"
+                                  oninput="saveCustomerData()"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-2 gap-2 items-center">
+                        <div>
+                            <input type="text" id="custPincode" placeholder="Pincode (6 digits) *" maxlength="6"
+                                   class="w-full bg-surface border border-borderMuted text-white placeholder-zinc-500 text-[11px] px-2.5 py-2 rounded-lg focus:outline-none focus:border-volt transition"
+                                   oninput="saveCustomerData()">
+                        </div>
+                        <!-- Payment Preference Pill Selector -->
+                        <div class="flex bg-surface p-0.5 rounded-lg border border-borderMuted text-[10px] font-bold">
+                            <button type="button" id="payModeUPI" onclick="setPaymentMode('UPI (GPay / PhonePe)')" 
+                                    class="flex-1 py-1.5 rounded-md text-center transition bg-volt text-obsidian shadow">
+                                UPI
+                            </button>
+                            <button type="button" id="payModeCOD" onclick="setPaymentMode('Cash on Delivery (COD)')" 
+                                    class="flex-1 py-1.5 rounded-md text-center transition text-zinc-400 hover:text-white">
+                                COD
+                            </button>
+                        </div>
+                    </div>
+
+                    <p id="addressErrorAlert" class="hidden text-[10px] text-red-400 font-mono font-bold flex items-center gap-1 pt-0.5">
+                        <i data-lucide="alert-circle" class="w-3 h-3"></i>
+                        <span>Please fill all required delivery fields!</span>
+                    </p>
+                </div>
+
+                <div class="flex justify-between items-baseline text-sm pt-1">
+                    <span class="text-zinc-400">Estimated Total:</span>
+                    <span id="cartSubtotal" class="text-2xl font-black font-display text-white">₹0</span>
+                </div>
+
+                <!-- Single Primary WhatsApp Checkout Action -->
+                <div>
+                    <button onclick="checkoutBagViaWhatsApp()" class="w-full bg-emerald-500 hover:bg-emerald-400 text-obsidian py-4 px-4 rounded-xl font-mono text-xs font-black uppercase tracking-wider flex items-center justify-center gap-2.5 shadow-xl transition-all hover:scale-[1.01] active:scale-95">
+                        <i data-lucide="message-square" class="w-4 h-4 fill-obsidian"></i>
+                        <span>Order & Pay via WhatsApp</span>
+                    </button>
+                    <div class="mt-2 flex items-center justify-center gap-2 text-[10px] text-zinc-400">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+                        <span>Direct Chat Confirmation • UPI QR / COD Available</span>
+                    </div>
+                </div>
+
+                <p class="text-[10px] text-center text-zinc-500">
+                    Zero payment gateway fees • 100% Cotton Authenticity Guarantee
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- QUICK-VIEW & FABRIC SPEC MODAL -->
+    <div id="quickViewModal" class="fixed inset-0 z-50 hidden bg-black/80 backdrop-blur-md flex items-center justify-center p-4">
+        <div class="bg-surface rounded-3xl max-w-2xl w-full p-6 sm:p-8 border border-borderMuted shadow-2xl relative max-h-[90vh] overflow-y-auto no-scrollbar">
+            
+            <button onclick="toggleQuickView(false)" class="absolute top-5 right-5 w-8 h-8 rounded-full bg-elevated text-zinc-400 hover:text-white flex items-center justify-center transition border border-borderMuted">
+                <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+
+            <div id="quickViewContent">
+                <!-- Dynamically populated from JS -->
+            </div>
+        </div>
+    </div>
+
+    <!-- NOTIFICATION TOAST -->
+    <div id="toastNotification" class="fixed top-24 right-5 z-50 pointer-events-none transform translate-y-[-20px] opacity-0 transition-all duration-300">
+        <div class="bg-volt text-obsidian px-4 py-3 rounded-xl font-mono text-xs font-black shadow-2xl flex items-center gap-2 border border-black/20">
+            <i data-lucide="check-circle" class="w-4 h-4"></i>
+            <span id="toastMsg">Added to Bag</span>
+        </div>
+    </div>
+
+    <!-- JAVASCRIPT APPLICATION ARCHITECTURE -->
+    <script>
+        const SHOP_WHATSAPP_NUMBER = "916382808739";
+
+        // Commercial Product Catalog with Dual Photography (Front and Back/Lifestyle View)
+        const CATALOG = [
+            {
+                id: "KT-01",
+                name: "Tokyo Cyber 2026 Heavyweight Acid Tee",
+                category: "oversized",
+                price: 599,
+                originalPrice: 999,
+                badge: "BESTSELLER",
+                stockLeft: 4,
+                frontImage: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=80",
+                sizes: ["M", "L", "XL", "XXL"],
+                defaultSize: "L",
+                colorName: "Acid Vintage Black",
+                swatchHex: "#1C1C22",
+                gsm: "240 GSM Combed French Terry",
+                desc: "Hand-distressed acid washed finish featuring front micro-type and high-density screen print back graphic. Oversized boxy silhouette with dropped shoulders."
+            },
+            {
+                id: "KT-02",
+                name: "Core Obsidian Heavy Boxy Solid Tee",
+                category: "solids",
+                price: 499,
+                originalPrice: 799,
+                badge: "ESSENTIAL",
+                stockLeft: 12,
+                frontImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=700&q=80",
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                defaultSize: "M",
+                colorName: "Deep Obsidian",
+                swatchHex: "#0D0E12",
+                gsm: "240 GSM Single Jersey Combed",
+                desc: "The daily armor. Clean zero-logo front with tailored drop shoulders. Silicon softened for ultra-smooth skin contact."
+            },
+            {
+                id: "KT-03",
+                name: "Mineral Smoke Wash Boxy Tee",
+                category: "vintage",
+                price: 649,
+                originalPrice: 1099,
+                badge: "LIMITED DROP",
+                stockLeft: 2,
+                frontImage: "https://images.unsplash.com/photo-1583743814966-8936f5b7be1a?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80",
+                sizes: ["M", "L", "XL"],
+                defaultSize: "XL",
+                colorName: "Charcoal Mineral",
+                swatchHex: "#3F3F46",
+                gsm: "250 GSM Heavy Mineral Dye",
+                desc: "Individually garment-dyed so every piece has a unique fade pattern. Features ribbed crewneck with spandex memory retention."
+            },
+            {
+                id: "KT-04",
+                name: "Raw Off-White Heavyweight Clean Tee",
+                category: "solids",
+                price: 499,
+                originalPrice: 799,
+                badge: "BIO-WASHED",
+                stockLeft: 8,
+                frontImage: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1521572267360-ee0c2909d518?auto=format&fit=crop&w=700&q=80",
+                sizes: ["S", "M", "L", "XL", "XXL"],
+                defaultSize: "L",
+                colorName: "Warm Raw Ecru",
+                swatchHex: "#E4E4E7",
+                gsm: "240 GSM Natural Unbleached Cotton",
+                desc: "Thick, opaque fabric that never turns transparent under sunlight. Breathable structure engineered for humid South Indian weather."
+            },
+            {
+                id: "KT-05",
+                name: "Motorsport Garage 98 Oversized Graphic",
+                category: "oversized",
+                price: 599,
+                originalPrice: 949,
+                badge: "TRENDING",
+                stockLeft: 3,
+                frontImage: "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=80",
+                sizes: ["S", "M", "L", "XL"],
+                defaultSize: "L",
+                colorName: "Racing Forest Green",
+                swatchHex: "#14281D",
+                gsm: "240 GSM Combed Cotton",
+                desc: "Retro automotive typography with crack-resistant plastisol inks. Retains vibrant pigment after prolonged sun exposure."
+            },
+            {
+                id: "KT-06",
+                name: "Sage Moss Street Minimalist Tee",
+                category: "solids",
+                price: 499,
+                originalPrice: 799,
+                badge: "NEW COLOR",
+                stockLeft: 9,
+                frontImage: "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1581655353564-df123a1eb820?auto=format&fit=crop&w=700&q=80",
+                sizes: ["S", "M", "L", "XL"],
+                defaultSize: "M",
+                colorName: "Sage Khaki",
+                swatchHex: "#4C5B4E",
+                gsm: "240 GSM Compact Cotton",
+                desc: "Earthy luxury palette matched to streetwear cargo pants and sneakers. Reinforced shoulder hem taping."
+            },
+            {
+                id: "KT-07",
+                name: "Desert Ochre Earth Wash Tee",
+                category: "vintage",
+                price: 549,
+                originalPrice: 899,
+                badge: "EARTH TONE",
+                stockLeft: 5,
+                frontImage: "https://images.unsplash.com/photo-1586790170083-2f9ceadc732d?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=700&q=80",
+                sizes: ["M", "L", "XL", "XXL"],
+                defaultSize: "XL",
+                colorName: "Desert Sand Gold",
+                swatchHex: "#B47C36",
+                gsm: "240 GSM Enzyme Washed",
+                desc: "Warm earth tone crafted for evening coffee runs and college events. Breathable open-end weave."
+            },
+            {
+                id: "KT-08",
+                name: "Kanji Typography Oversized Street Tee",
+                category: "oversized",
+                price: 579,
+                originalPrice: 949,
+                badge: "HOT DROP",
+                stockLeft: 3,
+                frontImage: "https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=700&q=80",
+                backImage: "https://images.unsplash.com/photo-1562157873-818bc0726f68?auto=format&fit=crop&w=700&q=80",
+                sizes: ["S", "M", "L", "XL"],
+                defaultSize: "L",
+                colorName: "Pitch Black",
+                swatchHex: "#111216",
+                gsm: "240 GSM Premium French Terry",
+                desc: "Japanese streetwear aesthetic featuring high-density typography with subtle matte finish."
+            }
+        ];
+
+        // State Management
+        let selectedProductSizes = {};
+        CATALOG.forEach(p => selectedProductSizes[p.id] = p.defaultSize);
+
+        let cart = [];
+
+        // Render Product Cards
+        function renderCatalog(category = 'all') {
+            const grid = document.getElementById('productGrid');
+            const items = category === 'all' ? CATALOG : CATALOG.filter(p => p.category === category);
+
+            grid.innerHTML = items.map(p => {
+                const currentSize = selectedProductSizes[p.id] || p.defaultSize;
+                return `
+                <div class="bg-surface rounded-2xl overflow-hidden border border-borderMuted hover:border-zinc-600 transition-all duration-300 flex flex-col group relative">
+                    
+                    <!-- Image Card with Dual Photo Hover and Badges -->
+                    <div class="relative aspect-[4/5] bg-elevated overflow-hidden cursor-pointer" onclick="openQuickView('${p.id}')">
+                        
+                        <!-- Badges -->
+                        <div class="absolute top-3 left-3 z-10 flex flex-col gap-1 items-start">
+                            <span class="bg-obsidian/90 text-white font-mono text-[9px] font-bold px-2 py-0.5 rounded border border-white/10 uppercase tracking-wider">
+                                ${p.badge}
+                            </span>
+                            ${p.stockLeft <= 4 ? `
+                                <span class="bg-accentAmber/90 text-white font-mono text-[9px] font-bold px-2 py-0.5 rounded border border-accentAmber/30 uppercase tracking-wider">
+                                    ONLY ${p.stockLeft} LEFT
+                                </span>
+                            ` : ''}
+                        </div>
+
+                        <!-- Hover Swap Images -->
+                        <img src="${p.frontImage}" 
+                             alt="${p.name}" 
+                             id="img-front-${p.id}"
+                             class="w-full h-full object-cover transition-opacity duration-500 group-hover:opacity-0 absolute inset-0">
+                        <img src="${p.backImage}" 
+                             alt="${p.name} Back view" 
+                             class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105">
+
+                        <!-- Swatch Pill on Image -->
+                        <div class="absolute bottom-3 left-3 bg-obsidian/85 backdrop-blur-md text-zinc-300 font-mono text-[10px] font-bold px-2.5 py-1 rounded-md border border-white/10 flex items-center gap-1.5">
+                            <span class="w-2.5 h-2.5 rounded-full border border-white/20" style="background-color: ${p.swatchHex}"></span>
+                            <span>${p.colorName}</span>
+                        </div>
+
+                        <!-- Quick View Overlay Button -->
+                        <button onclick="event.stopPropagation(); openQuickView('${p.id}')" 
+                                class="absolute bottom-3 right-3 bg-white/90 hover:bg-white text-obsidian p-2 rounded-lg text-xs font-mono font-bold opacity-0 group-hover:opacity-100 transition-all shadow-md">
+                            <i data-lucide="eye" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+
+                    <!-- Card Body -->
+                    <div class="p-4 sm:p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between text-[11px] font-mono text-zinc-400">
+                                <span>${p.gsm}</span>
+                                <span class="text-zinc-500">SKU: ${p.id}</span>
+                            </div>
+
+                            <h3 class="font-display font-bold text-white text-base mt-1 line-clamp-1 group-hover:text-volt transition">
+                                ${p.name}
+                            </h3>
+
+                            <!-- Price Row -->
+                            <div class="mt-2.5 flex items-baseline gap-2">
+                                <span class="text-2xl font-black font-display text-white">₹${p.price}</span>
+                                <span class="text-xs text-zinc-500 line-through font-mono">₹${p.originalPrice}</span>
+                                <span class="text-[10px] font-mono font-bold text-volt bg-volt/10 border border-volt/20 px-2 py-0.5 rounded">
+                                    SAVE ₹${p.originalPrice - p.price}
+                                </span>
+                            </div>
+
+                            <!-- Interactive Size Selector Pills -->
+                            <div class="mt-4">
+                                <div class="flex items-center justify-between text-[10px] font-mono font-bold text-zinc-400 mb-1.5">
+                                    <span>CHOOSE FIT:</span>
+                                    <button onclick="openQuickView('${p.id}')" class="text-volt hover:underline">SIZE GUIDE</button>
+                                </div>
+                                <div class="flex gap-1.5">
+                                    ${p.sizes.map(size => `
+                                        <button onclick="selectProductSize('${p.id}', '${size}')" 
+                                                id="size-btn-${p.id}-${size}"
+                                                class="size-pill-${p.id} w-8 h-8 rounded-lg font-mono text-xs font-bold transition flex items-center justify-center border ${
+                                                    currentSize === size 
+                                                    ? 'bg-volt text-obsidian border-volt shadow-md' 
+                                                    : 'bg-elevated text-zinc-300 border-borderMuted hover:border-zinc-500'
+                                                }">
+                                            ${size}
+                                        </button>
+                                    `).join('')}
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="mt-5 pt-3 border-t border-borderMuted flex gap-2">
+                            <button onclick="addToBag('${p.id}')" 
+                                    class="flex-1 bg-white hover:bg-zinc-200 text-obsidian py-2.5 px-2 rounded-xl font-mono text-xs font-extrabold uppercase tracking-wider flex items-center justify-center gap-1.5 transition active:scale-95">
+                                <i data-lucide="plus" class="w-3.5 h-3.5"></i>
+                                <span>Add to Bag</span>
+                            </button>
+
+                            <button onclick="instantWhatsAppOrder('${p.id}')" 
+                                    title="Buy Directly via WhatsApp"
+                                    class="bg-elevated hover:bg-zinc-800 text-emerald-400 border border-borderMuted hover:border-emerald-500/50 p-2.5 rounded-xl transition active:scale-95">
+                                <i data-lucide="message-square" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                `;
+            }).join('');
+
+            lucide.createIcons();
+        }
+
+        // Change Size State
+        function selectProductSize(productId, size) {
+            selectedProductSizes[productId] = size;
+            document.querySelectorAll(`.size-pill-${productId}`).forEach(btn => {
+                btn.className = `size-pill-${productId} w-8 h-8 rounded-lg font-mono text-xs font-bold transition flex items-center justify-center border bg-elevated text-zinc-300 border-borderMuted hover:border-zinc-500`;
+            });
+            const active = document.getElementById(`size-btn-${productId}-${size}`);
+            if (active) {
+                active.className = `size-pill-${productId} w-8 h-8 rounded-lg font-mono text-xs font-bold transition flex items-center justify-center border bg-volt text-obsidian border-volt shadow-md`;
+            }
+        }
+
+        // Category Filter
+        function setFilter(cat) {
+            const tabs = ['all', 'oversized', 'solids', 'vintage'];
+            tabs.forEach(t => {
+                const btn = document.getElementById(`btn-filter-${t}`);
+                if (t === cat) {
+                    btn.className = "cat-pill px-4 py-2 rounded-xl text-xs font-mono font-bold transition whitespace-nowrap bg-volt text-obsidian shadow";
+                } else {
+                    btn.className = "cat-pill px-4 py-2 rounded-xl text-xs font-mono font-bold transition whitespace-nowrap bg-elevated text-zinc-300 hover:text-white border border-borderMuted";
+                }
+            });
+            renderCatalog(cat);
+        }
+
+        // Add to Bag Logic
+        function addToBag(productId) {
+            const product = CATALOG.find(p => p.id === productId);
+            if (!product) return;
+
+            const size = selectedProductSizes[productId] || product.defaultSize;
+            const existingIndex = cart.findIndex(item => item.id === productId && item.size === size);
+
+            if (existingIndex > -1) {
+                cart[existingIndex].qty += 1;
+            } else {
+                cart.push({
+                    id: product.id,
+                    name: product.name,
+                    price: product.price,
+                    size: size,
+                    color: product.colorName,
+                    image: product.frontImage,
+                    qty: 1
+                });
+            }
+
+            updateCartUI();
+            showToast(`Added: ${product.name} (${size})`);
+            toggleCartDrawer(true);
+        }
+
+        // Update Cart Drawer UI & Free Shipping Bar
+        function updateCartUI() {
+            const totalQty = cart.reduce((sum, item) => sum + item.qty, 0);
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+
+            document.getElementById('headerCartCount').textContent = totalQty;
+            document.getElementById('drawerBagCount').textContent = `${totalQty} ITEMS`;
+            document.getElementById('cartSubtotal').textContent = `₹${subtotal}`;
+
+            // Free shipping goal progress (Target: ₹999)
+            const target = 999;
+            const progress = Math.min(100, Math.round((subtotal / target) * 100));
+            document.getElementById('shippingProgressBar').style.width = `${progress}%`;
+            document.getElementById('shippingPercentText').textContent = `${progress}%`;
+
+            const goalText = document.getElementById('shippingGoalText');
+            if (subtotal >= target) {
+                goalText.innerHTML = `<span class="text-volt font-bold">🎉 FREE EXPRESS DELIVERY UNLOCKED!</span>`;
+            } else {
+                goalText.textContent = `Add ₹${target - subtotal} more for Free Shipping`;
+            }
+
+            // Render Cart Items
+            const container = document.getElementById('cartItemsContainer');
+            if (cart.length === 0) {
+                container.innerHTML = `
+                    <div class="py-12 text-center text-zinc-500 font-mono text-xs">
+                        <i data-lucide="package-open" class="w-10 h-10 mx-auto text-zinc-600 mb-3"></i>
+                        <p>Your shopping bag is empty.</p>
+                        <p class="text-zinc-600 mt-1">Explore Drop 08 and add your favorite tees!</p>
+                    </div>
+                `;
+            } else {
+                container.innerHTML = cart.map((item, index) => `
+                    <div class="bg-elevated p-3.5 rounded-xl border border-borderMuted flex gap-3.5 items-center">
+                        <img src="${item.image}" alt="${item.name}" class="w-14 h-16 object-cover rounded-lg bg-surface">
+                        <div class="flex-1 min-w-0 font-mono">
+                            <h4 class="text-xs font-bold text-white truncate">${item.name}</h4>
+                            <p class="text-[11px] text-zinc-400 mt-0.5">Size: <span class="text-volt font-bold">${item.size}</span> • ${item.color}</p>
+                            <div class="mt-2 flex items-center justify-between">
+                                <span class="text-sm font-bold font-display text-white">₹${item.price * item.qty}</span>
+                                <div class="flex items-center gap-2 bg-surface px-2 py-0.5 rounded border border-borderMuted">
+                                    <button onclick="changeQty(${index}, -1)" class="text-zinc-400 hover:text-white">-</button>
+                                    <span class="text-xs text-white font-bold">${item.qty}</span>
+                                    <button onclick="changeQty(${index}, 1)" class="text-zinc-400 hover:text-white">+</button>
+                                </div>
+                            </div>
+                        </div>
+                        <button onclick="removeFromCart(${index})" class="text-zinc-500 hover:text-red-400 p-1">
+                            <i data-lucide="trash-2" class="w-4 h-4"></i>
+                        </button>
+                    </div>
+                `).join('');
+            }
+
+            lucide.createIcons();
+        }
+
+        function changeQty(index, delta) {
+            cart[index].qty += delta;
+            if (cart[index].qty <= 0) {
+                cart.splice(index, 1);
+            }
+            updateCartUI();
+        }
+
+        function removeFromCart(index) {
+            cart.splice(index, 1);
+            updateCartUI();
+        }
+
+        // Delivery Form & LocalStorage Logic
+        let selectedPaymentMode = 'UPI (GPay / PhonePe)';
+
+        function setPaymentMode(mode) {
+            selectedPaymentMode = mode;
+            const upiBtn = document.getElementById('payModeUPI');
+            const codBtn = document.getElementById('payModeCOD');
+
+            if (mode.startsWith('UPI')) {
+                upiBtn.className = "flex-1 py-1.5 rounded-md text-center transition bg-volt text-obsidian shadow font-bold";
+                codBtn.className = "flex-1 py-1.5 rounded-md text-center transition text-zinc-400 hover:text-white font-medium";
+            } else {
+                codBtn.className = "flex-1 py-1.5 rounded-md text-center transition bg-volt text-obsidian shadow font-bold";
+                upiBtn.className = "flex-1 py-1.5 rounded-md text-center transition text-zinc-400 hover:text-white font-medium";
+            }
+            saveCustomerData();
+        }
+
+        function saveCustomerData() {
+            const data = {
+                name: document.getElementById('custName').value.trim(),
+                phone: document.getElementById('custPhone').value.trim(),
+                address: document.getElementById('custAddress').value.trim(),
+                pincode: document.getElementById('custPincode').value.trim(),
+                paymentMode: selectedPaymentMode
+            };
+            try {
+                localStorage.setItem('kt_customer_checkout_info', JSON.stringify(data));
+            } catch (e) {
+                // Ignore storage quota/iframe restriction issues
+            }
+        }
+
+        function loadCustomerData() {
+            try {
+                const saved = localStorage.getItem('kt_customer_checkout_info');
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    if (data.name) document.getElementById('custName').value = data.name;
+                    if (data.phone) document.getElementById('custPhone').value = data.phone;
+                    if (data.address) document.getElementById('custAddress').value = data.address;
+                    if (data.pincode) document.getElementById('custPincode').value = data.pincode;
+                    if (data.paymentMode) setPaymentMode(data.paymentMode);
+                }
+            } catch (e) {}
+        }
+
+        // WhatsApp Checkout Generator with Validation & Populated Details
+        function checkoutBagViaWhatsApp() {
+            if (cart.length === 0) {
+                showToast("Please add items to your bag first!");
+                return;
+            }
+
+            const nameInput = document.getElementById('custName');
+            const phoneInput = document.getElementById('custPhone');
+            const addressInput = document.getElementById('custAddress');
+            const pincodeInput = document.getElementById('custPincode');
+            const errorAlert = document.getElementById('addressErrorAlert');
+
+            const name = nameInput.value.trim();
+            const phone = phoneInput.value.trim();
+            const address = addressInput.value.trim();
+            const pincode = pincodeInput.value.trim();
+
+            // Field validation check
+            let hasError = false;
+            [nameInput, phoneInput, addressInput, pincodeInput].forEach(inp => {
+                if (!inp.value.trim()) {
+                    inp.classList.add('border-red-500', 'bg-red-500/10');
+                    hasError = true;
+                } else {
+                    inp.classList.remove('border-red-500', 'bg-red-500/10');
+                }
+            });
+
+            if (hasError) {
+                errorAlert.classList.remove('hidden');
+                showToast("Please provide complete delivery details!");
+                return;
+            } else {
+                errorAlert.classList.add('hidden');
+            }
+
+            const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+            const deliveryCharge = subtotal >= 999 ? "FREE (Orders > ₹999)" : "₹60 (Standard Express)";
+            const finalPayable = subtotal >= 999 ? subtotal : subtotal + 60;
+
+            let message = `*NEW ORDER - KRAFT & THREAD CO.* 🛍️\n`;
+            message += `------------------------------------\n`;
+            message += `Hello Team, I want to confirm my order for:\n\n`;
+
+            cart.forEach((item, i) => {
+                message += `*${i + 1}. ${item.name}*\n`;
+                message += `   • Size: *${item.size}* | Color: *${item.color}*\n`;
+                message += `   • Quantity: ${item.qty} × ₹${item.price} = ₹${item.price * item.qty}\n\n`;
+            });
+
+            message += `------------------------------------\n`;
+            message += `• *Items Subtotal:* ₹${subtotal}\n`;
+            message += `• *Shipping:* ${deliveryCharge}\n`;
+            message += `• *Total Payable:* *₹${finalPayable}*\n\n`;
+            message += `*DELIVERY ADDRESS DETAILS:*\n`;
+            message += `• Name: *${name}*\n`;
+            message += `• Phone Number: *${phone}*\n`;
+            message += `• Delivery Address & Pincode: *${address}, Pincode: ${pincode}*\n`;
+            message += `• Payment Mode: *[${selectedPaymentMode}]*\n\n`;
+            message += `Please confirm stock availability and send UPI QR / payment confirmation!`;
+
+            window.open(`https://wa.me/${SHOP_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Instant Single Product WhatsApp Order
+        function instantWhatsAppOrder(productId) {
+            const product = CATALOG.find(p => p.id === productId);
+            if (!product) return;
+
+            const size = selectedProductSizes[productId] || product.defaultSize;
+            const message = `Hello KRAFT & THREAD! 👕\n\nI want to buy:\n• *Item:* ${product.name}\n• *SKU:* ${product.id}\n• *Color:* ${product.colorName}\n• *Size:* ${size}\n• *Price:* ₹${product.price}\n\nPlease confirm availability and share payment QR!`;
+
+            window.open(`https://wa.me/${SHOP_WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        // Quick View Modal
+        function openQuickView(productId) {
+            const p = CATALOG.find(item => item.id === productId);
+            if (!p) return;
+
+            const content = document.getElementById('quickViewContent');
+            content.innerHTML = `
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+                    <div class="aspect-[4/5] rounded-2xl overflow-hidden bg-elevated">
+                        <img src="${p.frontImage}" alt="${p.name}" class="w-full h-full object-cover">
+                    </div>
+                    <div class="space-y-4">
+                        <span class="text-xs font-mono text-volt uppercase font-bold tracking-wider">// TECHNICAL OVERVIEW</span>
+                        <h3 class="text-2xl font-extrabold font-display text-white">${p.name}</h3>
+                        
+                        <div class="flex items-baseline gap-2">
+                            <span class="text-3xl font-black font-display text-white">₹${p.price}</span>
+                            <span class="text-sm text-zinc-500 line-through font-mono">₹${p.originalPrice}</span>
+                        </div>
+
+                        <p class="text-xs sm:text-sm text-zinc-300 leading-relaxed">${p.desc}</p>
+
+                        <div class="bg-elevated p-3.5 rounded-xl border border-borderMuted font-mono text-xs space-y-1.5">
+                            <div class="flex justify-between text-zinc-400">
+                                <span>Fabric Weight:</span>
+                                <span class="text-white font-bold">${p.gsm}</span>
+                            </div>
+                            <div class="flex justify-between text-zinc-400">
+                                <span>Color Finish:</span>
+                                <span class="text-white font-bold">${p.colorName}</span>
+                            </div>
+                            <div class="flex justify-between text-zinc-400">
+                                <span>Wash Care:</span>
+                                <span class="text-white font-bold">Cold Machine Wash • Do Not Iron Print</span>
+                            </div>
+                        </div>
+
+                        <!-- Size Chart flat table -->
+                        <div class="border border-borderMuted rounded-xl overflow-hidden font-mono text-[11px]">
+                            <div class="bg-elevated text-zinc-300 font-bold p-2 flex justify-between border-b border-borderMuted">
+                                <span>Size</span><span>Chest (Flat)</span><span>Length</span>
+                            </div>
+                            <div class="p-2 space-y-1 text-zinc-400">
+                                <div class="flex justify-between"><span>M</span><span>40 inches</span><span>28 inches</span></div>
+                                <div class="flex justify-between"><span>L (Drop Shoulder)</span><span>42 inches</span><span>29 inches</span></div>
+                                <div class="flex justify-between"><span>XL (Streetwear Boxy)</span><span>44 inches</span><span>30 inches</span></div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2 flex gap-3">
+                            <button onclick="addToBag('${p.id}'); toggleQuickView(false);" 
+                                    class="flex-1 bg-volt hover:bg-voltHover text-obsidian py-3 rounded-xl font-mono text-xs font-extrabold uppercase tracking-wider transition">
+                                Add to Bag
+                            </button>
+                            <button onclick="instantWhatsAppOrder('${p.id}')" 
+                                    class="bg-elevated hover:bg-zinc-800 text-white border border-borderMuted px-4 py-3 rounded-xl font-mono text-xs font-bold transition">
+                                WhatsApp
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            toggleQuickView(true);
+            lucide.createIcons();
+        }
+
+        function toggleQuickView(show) {
+            const modal = document.getElementById('quickViewModal');
+            if (show) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            } else {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Cart Drawer Flyout Animation
+        function toggleCartDrawer(open) {
+            const drawer = document.getElementById('cartDrawer');
+            const backdrop = document.getElementById('cartBackdrop');
+            const panel = document.getElementById('cartPanel');
+
+            if (open) {
+                drawer.classList.remove('pointer-events-none');
+                backdrop.classList.remove('pointer-events-none', 'opacity-0');
+                backdrop.classList.add('opacity-100');
+                panel.classList.remove('translate-x-full');
+                panel.classList.add('translate-x-0');
+                document.body.style.overflow = 'hidden';
+            } else {
+                drawer.classList.add('pointer-events-none');
+                backdrop.classList.add('pointer-events-none', 'opacity-0');
+                backdrop.classList.remove('opacity-100');
+                panel.classList.add('translate-x-full');
+                panel.classList.remove('translate-x-0');
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Mobile Nav Drawer Toggle
+        function toggleMobileNav() {
+            const drawer = document.getElementById('mobileDrawer');
+            drawer.classList.toggle('hidden');
+        }
+
+        // Toast Feedback System
+        function showToast(msg) {
+            const toast = document.getElementById('toastNotification');
+            document.getElementById('toastMsg').textContent = msg;
+            toast.classList.remove('translate-y-[-20px]', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-[-20px]', 'opacity-0');
+                toast.classList.remove('translate-y-0', 'opacity-100');
+            }, 2500);
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            renderCatalog('all');
+            updateCartUI();
+            loadCustomerData();
+            lucide.createIcons();
+        };
+    </script>
+</body>
+</html>
